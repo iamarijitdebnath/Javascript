@@ -19,26 +19,38 @@
    </div>
 </body>
 <script>
-    // document.getElementById('owl').onclick = function(){
-    //     alert("Owl Clicked")
-    // }
-    //attachEvent()
-    //jQuery - on
-    //type,timestamp,defaultPrevent
-    //target,toElement,srcElement,currentTarget
-    //clientX,clientY,screenX,screenY,
-    //altkey,ctrlKey,shiftKey,keyCode
-    document.getElementById('images').addEventListener('click',function(e){
-        console.log("Clicked inside the ul");
-    },false)
-    document.getElementById('owl').addEventListener('click',function(e){
-        console.log("Owl clicked");
-        e.stopPropagation()
-    },false)
+    // // document.getElementById('owl').onclick = function(){
+    // //     alert("Owl Clicked")
+    // // }
+    // //attachEvent()
+    // //jQuery - on
+    // //type,timestamp,defaultPrevent
+    // //target,toElement,srcElement,currentTarget
+    // //clientX,clientY,screenX,screenY,
+    // //altkey,ctrlKey,shiftKey,keyCode
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("Clicked inside the ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("Owl clicked");
+    //     e.stopPropagation()
+    // },false)
 
-    document.getElementById('google').addEventListener('click',function(e){
-        console.log("Google clicked");
-        e.preventDefault()
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("Google clicked");
+    //     e.preventDefault()
+    // },false)
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+
+        if (e.target.tagName  === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        // let removeIt = e.target.parentNode
+        // removeIt.remove()
     },false)
     
     
